@@ -32,9 +32,11 @@ public class ZigzagShip : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("PlayerBullet"))
+        if (collision.gameObject.CompareTag("PlayerBullet") || collision.gameObject.CompareTag("GalagaPlayer"))
         {
-            Destroy(collision.gameObject);
+             if (collision.gameObject.CompareTag("PlayerBullet"))
+
+                Destroy(collision.gameObject);
 
             if (explosion != null)
             {
